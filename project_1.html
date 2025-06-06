@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页与照片墙</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Noto+Serif+SC:wght@200..900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="left">
+            <h1><a href="index.html" class="logo-link">photo gallery</a></h1>
+        </div>          
+        <div class="right">
+            <a href="#first">首页</a>
+            <a href="#about">关于</a>
+            <a href="#project">作品</a>
+            <div class="menu-container">
+                <button class="menu-button" href="#project">作品</button>
+                <div class="dropdown-menu">
+                <a href="#section1"><button>宋代花鸟画——禽鸟图鉴</button></a>
+                <a href="#section2"><button>十里红妆——网页游戏</button></a>
+                <a href="#section3"><button>电影叙述图标——《鬼灭之刃——无限列车</button></a>
+                <a href="#section4"><button>敦煌主题鞋履设计</button></a>
+                <a href="#section5"><button>文搭搭——毛绒玩具积木品牌全案</button></a> 
+                </div>
+              </div>
+        </div> 
+    </nav>
+
+    <!-- 页面内容 -->
+    <!-- 左侧：个人信息卡片 -->
+
+    <div class="container">
+        <div id="about" class="before" data-cursor-color="#ff0000"></div>
+
+        <!-- 右侧：个人介绍、照片墙等内容 -->
+        <main  class="content">
+
+            <!-- 照片墙 -->
+            <!-- 图片展示区 -->
+            <div class="kong" id="section1"></div>
+            <div class="h7">
+                宋代花鸟画——禽鸟图鉴
+            </div>
+            <div class="image-container">
+                <img src="src/1.1.png" alt="点击查看大图" class="thumbnail" >
+            </div>
+            <div class="image-container">
+                <img src="src/1.2.png" alt="点击查看大图" class="thumbnail" >
+            </div>
+            <div class="image-container">
+                <img src="src/1.3.png" alt="点击查看大图" class="thumbnail" >
+            </div>
+            <!-- 图片弹出框 -->
+             <div class="modal-1" id="modal-1">
+                <span class="close-1" id="closeBtn-1">&times;</span>
+                <img alt="点击查看大图" class="modal-content-1" id="modalImage">
+            </div>
+
+            <!-- 图片弹出框 -->
+             <div class="modal-1" id="modal-1">
+                <span class="close-1" id="closeBtn-1">&times;</span>
+                <img alt="点击查看大图" class="modal-content-1" id="modalImage">
+            </div>
+     
+        </main>
+    </div>
+
+    <!-- 弹窗 -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactForm()">&times;</span>
+            <h6>联系我</h6>
+            <form action="#">
+                <textarea placeholder="请输入您的信息...(仅为功能演示)" id="contactMessage"></textarea>
+                <button type="submit" class="submit-btn" onclick="closeContactForm()">提交</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- …（你原有的 body 内容都保持不动）… -->
+
+    <!-- ====== 以下修改：自定义鼠标圆点 + Canvas 版渐变尾巴 ====== -->
+    <div class="custom-cursor"></div>
+    <canvas id="cursorCanvas"></canvas>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
