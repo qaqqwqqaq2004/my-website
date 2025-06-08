@@ -669,3 +669,36 @@ body, html {
   color: #000000;
   text-decoration: underline;
 }
+
+
+
+
+/* 新增：两列并排，左 40% 右 60% */
+.project-3d-row {
+  display: flex;
+  align-items: center;   /* 垂直居中 */
+  gap: 30px;
+  margin: -50px 0;
+}
+
+/* 左侧文字区 */
+.project-info {
+  flex: 4;
+}
+
+/* 右侧 3D 区 */
+.project-3d-viewer {
+  flex: 6;
+  min-height: 300px;     /* 根据需要调整 */
+}
+
+/* 响应式：屏幕较小时改为单列 */
+@media (max-width: 768px) {
+  .project-3d-row {
+    flex-direction: column;
+  }
+  .project-3d-viewer {
+    width: 100%;
+    height: auto;
+  }
+}
