@@ -702,3 +702,51 @@ body, html {
     height: auto;
   }
 }
+
+/* 1. 容器调整，给箭头留空间 */
+/* ========== 关键修改开始 ========== */
+
+/* 1. 让项目行可做绝对定位 */
+.project-3d-row {
+    position: relative;
+  }
+  
+  /* 2. 箭头绝对定位到最右侧并垂直居中 */
+/* 3. 箭头绝对定位到右侧中部 */
+.project-arrow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  
+  
+  /* 3. 让视图区的所有缩略图右对齐并堆叠在箭头正下方 */
+  .project-3d-viewer {
+    margin-left: auto;
+    position: relative;
+  }
+
+ /* 4. 箭头缩放动画 */
+.project-arrow .arrow-link img {
+  width: 60px;              /* 根据需要设大小 */
+  transition: transform .3s ease;
+}
+.project-arrow .arrow-link:hover img {
+  transform: scale(1.3);
+}
+
+/* 5. 图片渐变遮罩 (右黑左透明) */
+.project-3d-viewer img {
+  position: relative;
+  z-index: 0;
+}
+.project-3d-viewer img::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.8), transparent);
+  pointer-events: none;
+  z-index: 5;
+}

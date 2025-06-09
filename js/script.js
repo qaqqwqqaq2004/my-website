@@ -285,3 +285,19 @@ function hexToRgba(hex, alpha) {
   }
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
+
+
+// 文字左移：箭头 hover 时给 .project-info 添加/移除微位移
+const arrowLink = document.querySelector('.project-arrow .arrow-link');
+const projectInfo = document.querySelector('.project-3d-row .project-info');
+
+if (arrowLink && projectInfo) {
+  arrowLink.addEventListener('mouseenter', () => {
+    projectInfo.style.transition = 'transform .3s ease';
+    projectInfo.style.transform = 'translateX(-10px)';
+  });
+  arrowLink.addEventListener('mouseleave', () => {
+    projectInfo.style.transform = '';
+  });
+}
+
