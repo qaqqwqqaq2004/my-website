@@ -519,7 +519,6 @@ textarea {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
     color: white;
-
     font-family: "ZCOOL XiaoWei", serif;
 
     text-align: center;
@@ -750,3 +749,93 @@ body, html {
   pointer-events: none;
   z-index: 5;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* === 子菜单容器 === */
+.submenu-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* 让按钮样式和原来的 menu-button 保持一致 */
+  .submenu-container .btn-nav {
+    min-width: 200px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-family: "ZCOOL XiaoWei", serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color .2s, text-decoration .2s;
+  }
+  .submenu-container .btn-nav:hover {
+    color: #dadada;
+    text-decoration: underline;
+  }
+  
+  /* 仿 dropdown-menu 的样式，只不过 left:0 让它贴在左边展开 */
+  .submenu-container .submenu {
+    display: none;
+    position: absolute;
+    top: 0%;        /* 正下方 */
+    right: 100%;          /* 紧贴按钮左侧 */
+    background-color: rgba(0, 0, 0, 0.8);
+    min-width: 160px; /* 根据实际内容调整 */
+    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
+    z-index: 10;
+  }
+  
+  /* 子菜单项样式类似 dropdown-menu button */
+  .submenu-container .submenu a {
+    display: block;
+    font-family: "ZCOOL XiaoWei", serif;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color .2s;
+    text-align: center;  
+  }
+  .submenu-container .submenu a:hover {
+    background-color: #494949;
+    color: #dadada;
+    text-decoration:underline ;
+  }
+  
+  /* Hover 时显示子菜单 */
+  .submenu-container:hover .submenu {
+    display: block;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
