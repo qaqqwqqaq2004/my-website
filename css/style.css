@@ -564,62 +564,7 @@ textarea {
     text-decoration:underline ;
 
 }
-/* ==============================================
-   2.1 隐藏系统默认光标
-   ============================================== */
-body, html {
-  cursor: none; /* 彻底隐藏浏览器自带的鼠标指针 */
-}
 
-/* ==============================================
-   2.2 “圆点” 的样式
-   ============================================== */
-.custom-cursor {
-  position: fixed;      /* 固定定位，始终相对于视窗 */
-  top: 0;
-  left: 0;
-  width: 20px;          /* 圆点直径，可根据喜好调整 */
-  height: 20px;
-  border-radius: 50%;   /* 圆角 50% 即为圆形 */
-  background-color: black; /* 默认颜色，后面 JS 里会根据滚动更改 */
-  pointer-events: none; /* 不阻断点击 */
-  transform: translate(-50%, -50%); /* 让 div 的中心点 跟随鼠标坐标 */
-  z-index: 9999;        /* 确保在最顶层 */
-  transition: background-color 0.3s ease; /* 切换颜色时做平滑过渡 */
-}
-
-/* =======================
-   2.3 全屏 Canvas，用来画渐变尾巴线
-   ======================= */
-   #cursorCanvas {
-    position: fixed;         /* 固定在视口 */
-    top: 0;
-    left: 0;
-    width: 100vw;            /* 宽高都铺满整个窗口 */
-    height: 100vh;
-    pointer-events: none;    /* 鼠标事件直接穿透到下面元素 */
-    z-index: 9998;           /* 比 custom-cursor 略低，这样圆点始终在最上面 */
-  }
-
-/* ==============================================
-   2.4 （可选）如果想让尾巴有“渐变”效果，可再加一个伪元素或 multiple-box-shadow
-   这里只做最简单的单一圆形尾巴，半透明即可
-   ============================================== */
-
-/* 如果你需要尾巴有多层渐变效果，可以用伪元素，例如：
-.cursor-tail::before {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.2);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-*/
-/* 只要你理解思路——JS 里控制 .custom-cursor 跟随鼠标，.cursor-tail “滞后”一段空间即可。 */
 
 
 
@@ -702,15 +647,13 @@ body, html {
   }
 }
 
-/* 1. 容器调整，给箭头留空间 */
-/* ========== 关键修改开始 ========== */
 
 /* 1. 让项目行可做绝对定位 */
 .project-3d-row {
     position: relative;
   }
   
-  /* 2. 箭头绝对定位到最右侧并垂直居中 */
+
 /* 3. 箭头绝对定位到右侧中部 */
 .project-arrow {
     position: absolute;

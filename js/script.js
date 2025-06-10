@@ -301,3 +301,17 @@ if (arrowLink && projectInfo) {
   });
 }
 
+
+// 复制邮箱到剪贴板
+const emailLink = document.getElementById('copyEmail');
+emailLink.addEventListener('click', function(e) {
+  e.preventDefault();
+  const email = '3220100228@zju.edu.cn';  // 你的邮箱
+  navigator.clipboard.writeText(email).then(() => {
+    // 你可以换成其他反馈方式
+    alert('已复制邮箱：' + email);
+  }).catch(err => {
+    console.error('复制失败', err);
+  });
+});
+
